@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main-form { 
+  text-align: center;
+}
+.input-bin-number { 
+  font-size: 1.6em;
+  padding: .3em .5em;
+  outline: none;
+  margin: 0 auto; 
+  /* width:250px; */
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: #eee;
+  border-radius: 0;
+  background: #fff;
+  transition: border-color .2s;
+  margin-bottom: 4em;
+  text-align: center;
+  appearance: none;
+}
+
+.input-bin-number:focus { 
+  border-color: #0078ff
+}
+
+ul{
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+section.lookup ul.result ol li::after, ul.result ol li:not(.selected) {
+  color: rgba(0,0,0,0.2);
+  font-weight: 300
+}
+
+ul.result ol li::after {
+  content: ' / '
+}
+
+ul.result ol li:last-child::after {
+  content: ''
+}
+
+li {
+  padding: .75em 0 .75em 0;
+  line-height: 1.5;
+    word-wrap: break-word;
+    display: list-item;
+}
