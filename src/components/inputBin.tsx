@@ -6,7 +6,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 // @ts-ignore
-import images, { PaymentInputsWrapper, usePaymentInputs } from 'react-payment-inputs';
+import { PaymentInputsWrapper, usePaymentInputs } from 'react-payment-inputs';
+// @ts-ignore
+import images from 'react-payment-inputs';
 
 const InputBin: React.FC = () => {
   const { getCardImageProps, getCardNumberProps, wrapperProps } = usePaymentInputs();
