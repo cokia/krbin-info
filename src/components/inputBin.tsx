@@ -1,31 +1,24 @@
+/* eslint-disable no-sequences */
+/* eslint-disable no-return-assign */
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-filename-extension */
-import React, { useState } from 'react';
+import React from 'react';
+// @ts-ignore
+import images, { PaymentInputsWrapper, usePaymentInputs } from 'react-payment-inputs';
 
-function InputBin() {
-  const [text, setBin] = useState('');
-
-  const onChange = (e:any) => {
-    setBin(e.target.value);
-  };
-
-  const onReset = () => {
-    setBin('');
-  };
+const InputBin: React.FC = () => {
+  const { getCardImageProps, getCardNumberProps, wrapperProps } = usePaymentInputs();
 
   return (
-    <div className="main-form">
-      <input onChange={onChange} className="input-bin-number" placeholder="4348 12" value={text}/>
-      <button onClick={onReset}>초기화</button>
-      <div>
-        <b>
-          값:
-          {text}
-        </b>
-      </div>
-    </div>
+    <>
+      <PaymentInputsWrapper {...wrapperProps}>
+        <svg {...getCardImageProps({ images })} />
+        <input {...getCardNumberProps} />
+      </PaymentInputsWrapper>
+    </>
   );
-}
+};
 
 export default InputBin;
