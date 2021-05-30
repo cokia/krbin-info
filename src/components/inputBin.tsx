@@ -10,12 +10,19 @@ import images, { PaymentInputsWrapper, usePaymentInputs } from 'react-payment-in
 
 const InputBin: React.FC = () => {
   const { getCardImageProps, getCardNumberProps, wrapperProps } = usePaymentInputs();
-
+  const cardInputOnChange = (e:any) => {
+    const cardNumber = e.target.value.replace(' ', '');
+    if (cardNumber.length === 6) {
+      fetch(`http://localhost:3002/api/${cardNumber}`)
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
+  };
   return (
     <>
       <PaymentInputsWrapper {...wrapperProps}>
         <svg {...getCardImageProps({ images })} />
-        <input {...getCardNumberProps} />
+        <input {...getCardNumberProps({ onChange: cardInputOnChange })} />
       </PaymentInputsWrapper>
     </>
   );
