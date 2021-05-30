@@ -25,6 +25,6 @@
   "include": ["./**/*"],
   "exclude": ["node_modules"],
   "resolve": {
-    "extensions": [".js", ".json", ".ts", ".tsx"],
+    "": [".js", ".json", ".ts", ".tsx"],
   }
 }
